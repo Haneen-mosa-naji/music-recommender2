@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+
+/* خلفية الصفحة مع تدرج بين رمادي وأسود */
+body {
+  background: linear-gradient(
+      rgba(20, 20, 20, 0.75), 
+      rgba(0, 0, 0, 0.75)
+    ), 
+    url("img.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #ddd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+
+}
+
+/* تنسيق العنوان */
+h2 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #aaa;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 40px;
+  font-family: 'Cairo', sans-serif;
+  letter-spacing: 1px;
+  direction: rtl;  /* إضافة الاتجاه من اليمين لليسار */
+  text-align: center; /* توسيط العنوان */
+}
+.subtitle {
+  font-family: 'Cairo', sans-serif;
+  color: #bbb;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: -10px; /* تقليل المسافة فوق */
+  margin-bottom: 40px; /* مسافة أسفل مناسبة */
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+
+/* الفورم مع خلفية شبه شفافة رمادية */
+form {
+  background-color: rgba(35, 35, 35, 0.85);
+  padding: 70px 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(150, 150, 150, 0.3);
+  max-width:700px;
+  margin: 0 auto 40px auto;
+  direction: rtl; /* اجعل اتجاه النص داخل الفورم من اليمين لليسار */
+  height:250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ملصق اختيار الأغنية */
+label.form-label {
+  font-weight: 600;
+  font-size:20px;
+  color: #bbb;
+  margin-bottom: 10px;
+  text-align: right; /* الكتابة من اليمين */
+  direction: rtl;    /* اتجاه النص من اليمين */
+  display: block;
+}
+
+/* صندوق الاختيار بنفس الحجم والأبعاد الأصلية */
+select.form-control {
+  background-color: #222;
+  color: #ccc;
+  border: 1px solid #444;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size:20px;
+  transition: border-color 0.3s;
+  width:100%;      /* توسيع عرض الصندوق ليملأ كامل العرض */
+  direction: rtl;   /* نص من اليمين */
+  text-align: right; /* محاذاة النص من اليمين */
+}
+
+select.form-control:focus {
+  outline: none;
+  border-color: #888;
+  box-shadow: 0 0 6px #888;
+}
+
+/* زر الإرسال بتدرجات رمادية */
+button.btn-primary {
+  background: linear-gradient(90deg, #555, #222);
+  border: none;
+  font-weight: 700;
+  padding: 12px 0;
+  font-size:15px;
+  border-radius: 10px;
+  width:30%;
+  transition: background 0.4s, transform 0.3s;
+  color: #eee;
+  box-shadow: 0 0 6px rgba(100, 100, 100, 0.7);
+}
+
+button.btn-primary:hover {
+  background: linear-gradient(90deg, #777, #444);
+  transform: scale(1.05);
+  box-shadow: 0 0 14px #aaa;
+}
+
+/* رسالة الخطأ */
+.alert-danger {
+  background-color: rgba(180, 50, 50, 0.85);
+  border: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  max-width: 500px;
+  margin: 20px auto 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(180, 50, 50, 0.7);
+}
+
+/* صف الكروت: توسيط أفقياً مع فراغات */
+.row.mt-4 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* تصغير عرض الكروت داخل الصف */
+.row.mt-4 > .col-md-4 {
+  flex: 0 0 30%;
+  max-width: 30%;
+  margin-bottom: 20px;
+}
+
+/* كروت الأغاني */
+.card {
+  height: 380px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: none;
+  background-color: #121212;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.04);
+  box-shadow: 0 15px 25px rgba(150, 150, 150, 0.6);
+}
+
+/* تصغير حجم الصورة داخل الكرت */
+.card-img-top {
+  height: 140px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* تصغير padding داخل الكرت */
+.card-body {
+  padding: 12px 15px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* تصغير حجم العنوان */
+.card-title {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #aaa;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* تصغير حجم النصوص */
+.card-text {
+  font-size: 0.85rem;
+  margin-bottom: 4px;
+  color: #ccc;
+  font-weight: 500;
+}
+
+/* زر الاستماع */
+.btn-outline-info {
+  border-radius: 12px;
+  font-weight: 700;
+  width: 100%;
+  color: #5bc0de;
+  border-color: #5bc0de;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  padding: 7px 0;
+}
+
+.btn-outline-info:hover {
+  background-color: #5bc0de;
+  color: #fff;
+  transform: scale(1.07);
+  box-shadow: 0 0 12px #5bc0de;
+}
+
+/* تأثير دخول الكروت */
+@keyframes fadeInUp {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* تحسين تجربة القراءة للخيارات في select */
+option {
+  background-color: #222;
+  color: #ccc;
+  padding: 8px;
+  direction: rtl;    /* نص الخيارات من اليمين */
+  text-align: right; /* محاذاة النص من اليمين */
+}
+
+/* استجابة التصميم */
+@media (max-width: 768px) {
+  h2 {
+    font-size: 2rem;
+  }
+  
+  .card-img-top {
+    height: 120px;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+
+  .row.mt-4 > .col-md-4 {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .row.mt-4 > .col-md-4 {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
