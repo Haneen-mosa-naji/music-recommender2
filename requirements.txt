@@ -4,7 +4,7 @@ scikit-learn
 numpy
 nltk
 google-api-python-client
-os
+
 
 
 
